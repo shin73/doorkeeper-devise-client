@@ -18,6 +18,7 @@ gem "rollbar"
 group :development do
   gem "dotenv-rails"
   gem "rubocop-rails_config"
+  gem "localhost"
 end
 
 group :development, :test do

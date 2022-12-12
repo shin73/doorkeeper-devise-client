@@ -13,12 +13,16 @@ module OmniAuth
 
       info do
         {
-          email: raw_info["email"]
+          email: raw_info["email"],
+          name: raw_info["name"],
+          extra: raw_info
         }
       end
 
       def raw_info
-        @raw_info ||= access_token.get("/api/v1/me.json").parsed
+        # p @raw_info
+        # p @raw_info['extra'] if @raw_info.present?
+        @raw_info ||= access_token.get("/user_info").parsed
       end
     end
   end
