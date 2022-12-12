@@ -1,5 +1,6 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   def doorkeeper
+    binding.pry
     @user = User.from_omniauth(request.env["omniauth.auth"])
     if @user.persisted?
       @user.update_doorkeeper_credentials(request.env["omniauth.auth"])

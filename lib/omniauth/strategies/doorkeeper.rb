@@ -5,7 +5,12 @@ module OmniAuth
 
       option :client_options,
              site: ENV["DOORKEEPER_APP_URL"],
-             authorize_path: "/oauth/authorize"
+             authorize_path: "/oauth/authorize",
+             connection_opts: {
+               headers: {
+                 'Authorization' => "Basic #{ENV["BASIC_AUTHORIZATION_TOKEN"]}"
+               }
+             }
 
       uid do
         raw_info["id"]
@@ -20,9 +25,8 @@ module OmniAuth
       end
 
       def raw_info
-        # p @raw_info
-        # p @raw_info['extra'] if @raw_info.present?
-        @raw_info ||= access_token.get("/user_info").parsed
+        access_token_basic_auth = ::OAuth2::AccessToken.from_hash(access_token.client, { access_token: ENV["BASIC_AUTHORIZATION_TOKEN"], header_format: 'Basic %s' })
+        @raw_info ||= access_token_basic_auth.get("/user_info?access_token=#{access_token.token}").parsed
       end
     end
   end
