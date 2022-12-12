@@ -67,6 +67,7 @@ GEM
     coderay (1.1.2)
     concurrent-ruby (1.1.10)
     crass (1.0.6)
+    date (3.3.1)
     devise (4.8.1)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -106,6 +107,11 @@ GEM
     minitest (5.15.0)
     multi_json (1.15.0)
     multi_xml (0.6.0)
+    net-imap (0.3.2)
+      date
+      net-protocol
+    net-pop (0.1.2)
+      net-protocol
     net-protocol (0.2.1)
       timeout
     net-smtp (0.3.3)
@@ -259,6 +265,8 @@ DEPENDENCIES
   dotenv-rails
   listen
   localhost
+  net-imap
+  net-pop
   net-smtp
   omniauth-oauth2 (~> 1.8.0)
   omniauth-rails_csrf_protection (~> 1.0)

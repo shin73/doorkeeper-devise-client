@@ -15,7 +15,8 @@ gem "omniauth-oauth2", "~> 1.8.0"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "rollbar"
 gem "net-smtp"
-
+gem 'net-imap'
+gem 'net-pop'
 
 group :development do
   gem "dotenv-rails"
