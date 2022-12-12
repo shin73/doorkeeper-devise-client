@@ -14,6 +14,8 @@ gem "devise", "~> 4.8"
 gem "omniauth-oauth2", "~> 1.8.0"
 gem "omniauth-rails_csrf_protection", "~> 1.0"
 gem "rollbar"
+gem "net-smtp"
+
 
 group :development do
   gem "dotenv-rails"
