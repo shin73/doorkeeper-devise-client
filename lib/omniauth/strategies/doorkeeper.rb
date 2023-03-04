@@ -26,7 +26,7 @@ module OmniAuth
 
       def raw_info
         access_token_basic_auth = ::OAuth2::AccessToken.from_hash(access_token.client, { access_token: ENV["BASIC_AUTHORIZATION_TOKEN"], header_format: 'Basic %s' })
-        @raw_info ||= access_token_basic_auth.get("/user_info?access_token=#{access_token.token}").parsed
+        @raw_info ||= access_token_basic_auth.get("/campfire_id/user_info?access_token=#{access_token.token}").parsed
       end
     end
   end
