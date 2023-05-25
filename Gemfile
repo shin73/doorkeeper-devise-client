@@ -6,7 +6,7 @@ ruby '3.1.2'
 
 gem "listen"
 gem "puma", "~> 5.6"
-gem "rails", "~> 6.1"
+gem "rails", "~> 7.0"
 gem "sass-rails", "~> 6.0"
 gem "uglifier", ">= 1.3.0"
 
